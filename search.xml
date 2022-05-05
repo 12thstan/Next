@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>测试 文档</title>
+    <url>/archives/1.html</url>
+    <content><![CDATA[<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><span id="more"></span>
+
+<h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><p><a href="https://blog.c12th.cn/">主站</a></p>
+]]></content>
+      <categories>
+        <category>实用小技巧</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+</search>
