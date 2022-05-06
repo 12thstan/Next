@@ -1,17 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>测试 文档</title>
+    <title>如何优雅的加速Github</title>
     <url>/archives/1.html</url>
-    <content><![CDATA[<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><span id="more"></span>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p><font size=3>加速的方法有多种，这里只演示我常用的三种方法。</font></p>
+</blockquote>
+<p>平常我们浏览Github的时候，常常都会遇到 <strong><font color=red>服务器抽风</font></strong> 的问题，面对这些问题有下面 <strong>三种解决方法</strong> 。</p>
+<span id="more"></span>
+<hr>
+<h1 id="Steam"><a href="#Steam" class="headerlink" title="Steam + +"></a><a href="https://steampp.net/">Steam + +</a></h1><img src="https://pic.imgdb.cn/item/624af1da239250f7c5c4ac72.png" width="500">
 
-<h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><p><a href="https://blog.c12th.cn/">主站</a></p>
+<p align = "center">Steam + +</p>
+
+<p>Steam + +<br><strong>多平台Steam辅助工具箱，对于经常访问Steam社区的同学应该不陌生，Steam + +不仅可以加速 <font color=red>Steam社区</font> ，还能加速 <font color=#99A9BF> Github 、一些主流启动器 、微软商店 </font> 和 <font color=#99A9BF> P站 </font></strong>(Pixiv是一个以插图、漫画和小说、艺术为中心的社交网络服务里的虚拟社区网站) <strong>等。</strong> <em>因为Steam + + 主要面向Steam，所以这里主要说明加速Github。Steam + + 还有很多强大的功能，请自行下载体验。</em> <strong><font color=red>（第一次使用需要在软件里安装SSL证书。）</font></strong></p>
+<hr>
+<h1 id="UsbEAm-Hosts-Editor"><a href="#UsbEAm-Hosts-Editor" class="headerlink" title="UsbEAm Hosts Editor"></a><a href="https://www.dogfight360.com/blog/475/">UsbEAm Hosts Editor</a></h1><img src="https://pic.imgdb.cn/item/624af1da239250f7c5c4ac82.png" width="500">
+
+<p align = "center">UsbEAm Hosts Editor</p>
+
+<p>UsbEAm Hosts Editor<br><strong>强大的多平台加速工具 <font color=cyan>羽翼城 大佬yyds</font></strong></p>
+<p><strong>使用教程：</strong></p>
+<ul>
+<li>点击下载</li>
+</ul>
+<ol>
+<li>选择 <font color=blue>Github - 开源社区</font> <img src="https://pic.imgdb.cn/item/624af1da239250f7c5c4ac79.png"  height="180" width="200" ></li>
+<li>推荐选择 <font color=blue>上图二选一</font> <em>只测试并使用过这两个，其他请自行测试</em></li>
+<li><font color=blue>检测延迟</font></li>
+<li><font color=blue>应用选中</font> 选择 <strong>延迟最小</strong> <strong><font color=red>（第一次使用需要在软件里安装SSL证书）</font></strong></li>
+</ol>
+<hr>
+<h1 id="手动配置Hosts"><a href="#手动配置Hosts" class="headerlink" title="手动配置Hosts"></a><a href="https://github.com/521xueweihan/GitHub520">手动配置Hosts</a></h1><blockquote>
+<p><font size=3>第三种方法参考 <a href="https://www.bilibili.com/read/cv10607526">原文</a> ，该说明为<font color=red>修改版</font>。</font></p>
+</blockquote>
+<p><strong>感谢<font color=cyan> 削微寒 大佬 </font>提供解决方案</strong><br><strong>感谢<font color=cyan> Acwinuxos系统 </font>原文整理</strong></p>
+<p><strong>修改教程：</strong></p>
+<ul>
+<li><p>点击下载<br><strong><del>点击<a href="https://cdn.jsdelivr.net/gh/521xueweihan/GitHub520@main/hosts">下载Hosts</a></del></strong><br><del><strong>作者更新了，去</strong><font color=blue> 复制粘贴 </font><strong>最新 -&gt; 2022-01-01T00:05:46+08:00</strong></del><br><del><strong>作者更新了，去</strong><font color=blue> 复制粘贴 </font><strong>最新 -&gt; 2022-01-01T20:07:29+08:00</strong></del><br><del><strong>作者更新了，去</strong><font color=blue> 复制粘贴 </font><strong>最新 -&gt; 2022-01-02T10:21:15+08:00</strong></del><br><strong>作者更新了，去</strong><font color=blue> 复制粘贴 </font><strong>最新 -&gt; 2022-01-02T14:06:24+08:00</strong><br><strong><font color=red>已停止同步更新，如需最新Hosts配置，可到作者Github查看，或使用作者提供的方法。</font></strong></p>
+</li>
+<li><p>复制粘贴（2022-01-02）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># GitHub520 Host Start</span><br><span class="line">140.82.112.26                 alive.github.com</span><br><span class="line">140.82.114.25                 live.github.com</span><br><span class="line">185.199.108.154               github.githubassets.com</span><br><span class="line">140.82.114.21                 central.github.com</span><br><span class="line">185.199.108.133               desktop.githubusercontent.com</span><br><span class="line">185.199.108.153               assets-cdn.github.com</span><br><span class="line">185.199.108.133               camo.githubusercontent.com</span><br><span class="line">185.199.108.133               github.map.fastly.net</span><br><span class="line">199.232.69.194                github.global.ssl.fastly.net</span><br><span class="line">140.82.113.3                  gist.github.com</span><br><span class="line">185.199.108.153               github.io</span><br><span class="line">140.82.112.4                  github.com</span><br><span class="line">192.0.66.2                    github.blog</span><br><span class="line">140.82.114.5                  api.github.com</span><br><span class="line">185.199.108.133               raw.githubusercontent.com</span><br><span class="line">185.199.108.133               user-images.githubusercontent.com</span><br><span class="line">185.199.108.133               favicons.githubusercontent.com</span><br><span class="line">185.199.108.133               avatars5.githubusercontent.com</span><br><span class="line">185.199.108.133               avatars4.githubusercontent.com</span><br><span class="line">185.199.108.133               avatars3.githubusercontent.com</span><br><span class="line">185.199.108.133               avatars2.githubusercontent.com</span><br><span class="line">185.199.108.133               avatars1.githubusercontent.com</span><br><span class="line">185.199.108.133               avatars0.githubusercontent.com</span><br><span class="line">185.199.108.133               avatars.githubusercontent.com</span><br><span class="line">140.82.113.9                  codeload.github.com</span><br><span class="line">54.231.133.17                 github-cloud.s3.amazonaws.com</span><br><span class="line">52.217.95.25                  github-com.s3.amazonaws.com</span><br><span class="line">52.216.153.172                github-production-release-asset-2e65be.s3.amazonaws.com</span><br><span class="line">52.217.199.249                github-production-user-asset-6210df.s3.amazonaws.com</span><br><span class="line">52.217.200.1                  github-production-repository-file-5c1aeb.s3.amazonaws.com</span><br><span class="line">185.199.108.153               githubstatus.com</span><br><span class="line">64.71.144.202                 github.community</span><br><span class="line">23.100.27.125                 github.dev</span><br><span class="line">185.199.108.133               media.githubusercontent.com</span><br><span class="line">185.199.108.133               cloud.githubusercontent.com</span><br><span class="line">185.199.108.133               objects.githubusercontent.com</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Update time: 2022-01-02T14:06:24+08:00</span><br><span class="line"># Update url: https://raw.hellogithub.com/hosts</span><br><span class="line"># Star me: https://github.com/521xueweihan/GitHub520</span><br><span class="line"># GitHub520 Host End</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol>
+<li>先 <del><font color=blue>下载</font> 或</del> <font color=blue>复制</font> Hosts内容 <strong>↑ ↑ ↑</strong></li>
+<li>找到 <strong>Hosts文件所在系统的目录</strong><blockquote>
+<blockquote>
+<p>Windows 系统： <strong>C:\Windows\System32\drivers\etc\hosts</strong><br>Linux 系统： <strong>&#x2F;etc&#x2F;hosts</strong><br>Mac（苹果电脑）系统： <strong>&#x2F;etc&#x2F;hosts</strong></p>
+</blockquote>
+</blockquote>
+</li>
+<li>把 <del><font color=blue>下载</font> 或</del> <font color=blue>复制</font> 的内容 <strong>复制到文本末尾</strong><blockquote>
+<blockquote>
+<p>Windows <strong>使用记事本</strong> 打开<br>Linux、Mac <strong>使用 Root 权限：sudo vi &#x2F;etc&#x2F;hosts</strong> 打开</p>
+</blockquote>
+</blockquote>
+</li>
+<li>保存后激活，<strong>刷新 DNS</strong><blockquote>
+<blockquote>
+<p>Windows：<strong>在 CMD 窗口输入：ipconfig &#x2F;flushdns</strong><br>Linux 命令：<strong>sudo nscd restart，<font color=red>如报错则需要安装：sudo apt install nscd 或 sudo &#x2F;etc&#x2F;init.d&#x2F;nscd restart</font></strong><br>Mac 命令：<strong>sudo killall -HUP mDNSResponder</strong></p>
+</blockquote>
+</blockquote>
+</li>
+</ol>
+<p>由于作者更新较为频繁，而且作者也提供了更新Hosts配置的方法。 <del>其实是我懒</del></p>
+<p><strong>作者在 <a href="https://github.com/521xueweihan/GitHub520">Github</a> 上提供了 <font color=blue>4 种</font> 更新Hosts配置的方法，这里列举 1 种。</strong><br><strong>Chrome 插件方法：</strong></p>
+<ol>
+<li>下载 <strong><a href="https://codeload.github.com/gauseen/faster-hosts/zip/master">FasterHosts</a></strong></li>
+<li>解压后找到“<font color=blue> extension </font>”文件夹</li>
+<li>打开 <strong>Chrome</strong> ，输入： <strong><font color=blue> chrome:&#x2F;&#x2F;extensions&#x2F; </font><strong>，</strong><font color=red> 这里要开启「开发者模式」 </font></strong></li>
+<li>选择 <strong><font color=blue>「加载已解压的扩展程序」</font></strong> ，然后定位到刚才解压的文件夹里面的 “ <strong><font color=blue>extension</font></strong> ”文件夹， <strong><font color=blue>确定</font></strong></li>
+</ol>
+<hr>
+<h1 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h1><p><strong>感谢<font color=cyan> X. I .U 大佬 </font>的脚本</strong><br><strong>有一种不需要额外软件加速的方法：</strong></p>
+<ol>
+<li>安装 <a href="https://www.tampermonkey.net/">油猴插件</a> ， <strong><font color=red> 安装正式版「Tampermonkey Stable」 </font></strong></li>
+<li>安装 <a href="https://greasyfork.org/zh-CN/scripts/412245-github-%E5%A2%9E%E5%BC%BA-%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD">Github 增强</a> 脚本即可</li>
+<li>一般默认即可，如需 <strong>点击切换</strong> 即可 <img src="https://pic.imgdb.cn/item/624af1da239250f7c5c4ac6a.png"  height="240" width="230" ></li>
+</ol>
+<hr>
+<h1 id="容易遇到的问题"><a href="#容易遇到的问题" class="headerlink" title="容易遇到的问题"></a>容易遇到的问题</h1><p><strong>使用以上方法</strong>(除新增)，<strong>在本地推送到github仓库上时容易出现的问题：</strong><br><strong><code>fatal: unable to access '<a href="https://github.com/.......&#39;">https://github.com/.......&#39;</a>: OpenSSL SSL_read: Connection was reset</code></strong><br>解决方法 <font color=blue>关闭ssl验证</font></p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">git config --global http.sslVerify &quot;false&quot;</span><br></pre></td></tr></table></figure>
+<p><font size=3>重新推送即可</font></p>
+<hr>
+<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><blockquote>
+<p><strong>搭建博客上传到Github仓库</strong> 或 <strong>克隆Github上的主题</strong>，推荐采用 <strong>第一种</strong> 、 <strong>第二种</strong> 和 <strong>第三种</strong> 方法。</p>
+</blockquote>
+<blockquote>
+<p>第三种方法 Hosts 配置，这里已停止同步更新，如需最新配置可到作者Github上查看。</p>
+</blockquote>
+<blockquote>
+<p>使用上面的方法也会概率性出现服务器抽风，不要方，你只需要刷新，等待，重启软件……</p>
+</blockquote>
+<hr>
 ]]></content>
       <categories>
         <category>实用小技巧</category>
       </categories>
       <tags>
-        <tag>测试</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
 </search>
