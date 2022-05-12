@@ -510,7 +510,7 @@ setInterval("createtime()",250);
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
     var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
+    var guest = 'nick,mail';
     guest = guest.split(',').filter(item => {
       return GUEST.includes(item);
     });
@@ -518,14 +518,14 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       el         : '#valine-comments',
       verify     : true,
       notify     : true,
-      appId      : 'c2PRL4XjbEK1C1nOTahlPlOd-MdYXbMMI',
-      appKey     : 'Qzz2EoDomghtSk134Ljfjrb6',
+      appId      : 'qX2L1kyidSzbXYx8R7NwmJWw-MdYXbMMI',
+      appKey     : 'f6lwHVIyJKBtY0GSdhBHyppI',
       placeholder: "来都来了不留下自己的足迹吗 ~",
       avatar     : 'mm',
       meta       : guest,
       pageSize   : '10' || 10,
-      visitor    : ture,
-      lang       : '' || 'zh-cn',
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
       path       : location.pathname,
       recordIP   : false,
       serverURLs : ''
