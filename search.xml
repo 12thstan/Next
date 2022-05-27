@@ -4,7 +4,7 @@
     <title>白嫖cloudflare实现网址短链接</title>
     <url>/archives/2.html</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p>&lt;font size&#x3D;3 该教程为较详细的文字版，可能与视频演示顺序有所区别。</font></p>
+<p><font size=3> 该教程为较详细的文字版，可能与视频演示顺序有所区别。</font></p>
 </blockquote>
 <blockquote>
 <p><font size=3>原教程源自 b站up主 <a href="https://www.bilibili.com/video/BV1qB4y117q1">大c很闲</a> </font></p>
@@ -23,7 +23,7 @@
 <li><font color=blue> win + R </font> 打开 <font color=blue> cmd </font>输入<font color=red> npm install -g @cloudflare&#x2F;wrangler </font>安装插件，然后输入<font color=red> wrangler login </font>自动跳转到网页点击<font color=blue> Allow </font>授权登录<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g @cloudflare/wrangler</span><br><span class="line"></span><br><span class="line">cnpm install -g @cloudflare/wrangler</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wrangler login</span><br></pre></td></tr></table></figure></li>
 <li>下载 <a href="https://github.com/code-scan/cfwork_shortlink_text">Github源码</a> 并<font color=blue> 解压 </font></li>
-<li>需要更改网址为<font color=blue> 公开访问 </font>，则修改<font color=blue> index.js </font>文件中的<code> admin_path</code>设置为<code> = '/' </code>；不需改默认为指定路径<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// const admin_path = &#x27;/short_link_admin&#x27;</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">const</span> admin_path = <span class="string">&#x27;/&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li>需要更改网址为<font color=blue> 公开访问 </font>，则修改<font color=blue> index.js </font>文件中的<code> admin_path </code>设置为<code> = '/' </code>；不需改默认为指定路径<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// const admin_path = &#x27;/short_link_admin&#x27;</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">const</span> admin_path = <span class="string">&#x27;/&#x27;</span></span><br></pre></td></tr></table></figure></li>
 <li>回到<font color=blue> cloudflare </font>，点击<font color=blue> Workers </font>，找到<font color=blue> KV </font><font color=red>如图 1 所示 </font>；点击<font color=blue> 创建命名空间 </font>，名称为<font color=blue> <strong>shortlink</strong> </font> 或者 <strong>自定义</strong> <font color=red> 如图 2 所示 </font><img src="https://pic.imgdb.cn/item/6272a33d09475431290ffe80.png" width="200">
 <p align = "center">图 1</p>
 <img src="https://pic.imgdb.cn/item/6272a33d09475431290ffe88.png" width="400">
@@ -44,8 +44,8 @@
         <category>白嫖小技巧</category>
       </categories>
       <tags>
-        <tag>分享</tag>
         <tag>白嫖</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
