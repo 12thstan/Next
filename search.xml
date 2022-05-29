@@ -94,8 +94,8 @@
 <li><font size="3" color="blue">同理</font> 在 <strong>标签</strong> 和 <strong>分类</strong> 都显示，把 <code>page.type !== 'categories' and page.type !== 'tags' and</code> <font size="3" color="red">这两句代码删除</font> 即可<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- page.type !== &#x27;categories&#x27; and page.type !== &#x27;tags&#x27; and</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <hr>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><blockquote>
-<p><a href="https://blog.c12th.cn/archives/5.html">把github贡献日历部署到博客上(一)</a></p>
+<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><blockquote>
+<p>第一篇 <em><a href="https://blog.c12th.cn/archives/5.html">把github贡献日历部署到博客上(一)</a></em></p>
 </blockquote>
 <hr>
 ]]></content>
@@ -150,8 +150,8 @@
         <category>白嫖小技巧</category>
       </categories>
       <tags>
-        <tag>白嫖</tag>
         <tag>分享</tag>
+        <tag>白嫖</tag>
       </tags>
   </entry>
   <entry>
