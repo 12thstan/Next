@@ -17,7 +17,7 @@ jobs:
       - name: 检查分支
         uses: actions/checkout@v2
         with:
-          ref: myblog #2020年10月后github新建仓库默认分支改为main，注意更改
+          ref: master #2020年10月后github新建仓库默认分支改为main，注意更改
 
       - name: 安装 Node
         uses: actions/setup-node@v1
@@ -50,7 +50,7 @@ jobs:
         run: |
           git config --global user.name "12thstan"
           git config --global user.email "1308168694@qq.com"
-          git clone https://github.com/12thstan/Next.git .deploy_git
+          # git clone https://github.com/xxxxx/xxxx.github.io.git .deploy_git
           # 此处务必用HTTPS链接。SSH链接可能有权限报错的隐患
           # =====注意.deploy_git前面有个空格=====
           # 这行指令的目的是clone博客静态文件仓库，防止Hexo推送时覆盖整个静态文件仓库，而是只推送有更改的文件
