@@ -1,22 +1,58 @@
-name: Build and Deploy
-on: [push]
+# 当有改动推送到master分支时，启动Action
+name: 自动部署
+
+on:
+  push:
+    branches:
+      - myblog #2020年10月后github新建仓库默认分支改为main，注意更改
+
+  release:
+    types:
+      - published
+
 jobs:
-  build-and-deploy:
+  checkout:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+      - name: 检查分支
+        uses: actions/checkout@v2
         with:
-          persist-credentials: false
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+          ref: myblog #2020年10月后github新建仓库默认分支改为main，注意更改
+
+      - name: 安装 Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+
+      - name: 安装 Hexo
         run: |
-          npm install
-          npm run build
-        env:
-          CI: false
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+          export TZ='Asia/Shanghai'
+          npm install hexo-cli -g
+
+      - name: 缓存 Hexo
+        uses: actions/cache@v1
+        id: cache
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: myblog # The branch the action should deploy to.
-          FOLDER: public # The folder the action should deploy.
+          path: node_modules
+          key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
+
+      - name: 安装依赖
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          npm install --save
+
+      - name: 生成静态文件
+        run: |
+          hexo clean
+          hexo generate
+
+      - name: 部署到github pages
+        run: |
+          git config --global user.name "12thstan"
+          git config --global user.email "1308168694@qq.com"
+          # git clone https://github.com/xxxxx/xxxx.github.io.git .deploy_git
+          # 此处务必用HTTPS链接。SSH链接可能有权限报错的隐患
+          # =====注意.deploy_git前面有个空格=====
+          # 这行指令的目的是clone博客静态文件仓库，防止Hexo推送时覆盖整个静态文件仓库，而是只推送有更改的文件
+          # 我注释掉了是为了刷新整个仓库，也可以选择不注释掉，但是可能出现没有识别到的情况
+          hexo deploy
