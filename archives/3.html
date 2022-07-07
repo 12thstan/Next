@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://pic.imgdb.cn/item/624aa2ca239250f7c5145d0d.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://pic.imgdb.cn/item/624aa2ca239250f7c5145d0d.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://pic.imgdb.cn/item/624aa2ca239250f7c5145d0d.png">
+  <link rel="mask-icon" href="https://pic.imgdb.cn/item/624aa2ca239250f7c5145d0d.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://unpkg.com/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"next.c12th.cn","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"Available values":"mac","style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="前言 原教程已经说得很详细了，这里演示 简化版   原教程源自 Gainii 大佬">
+<meta property="og:type" content="article">
+<meta property="og:title" content="把github贡献日历部署到博客上(二)">
+<meta property="og:url" content="https://next.c12th.cn/archives/3.html">
+<meta property="og:site_name" content="Reverse -s blog">
+<meta property="og:description" content="前言 原教程已经说得很详细了，这里演示 简化版   原教程源自 Gainii 大佬">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ghchart.rshah.org/409ba5/12thstan">
+<meta property="og:image" content="https://ghchart.rshah.org/12thstan">
+<meta property="og:image" content="https://ghchart.rshah.org/0000FF/12thstan">
+<meta property="og:image" content="https://ghchart.rshah.org/ff0000/12thstan">
+<meta property="og:image" content="https://ghchart.rshah.org/00785D/12thstan">
+<meta property="og:image" content="https://pic.imgdb.cn/item/629321b30947543129224858.png">
+<meta property="article:published_time" content="2022-05-29T18:53:00.000Z">
+<meta property="article:modified_time" content="2022-07-07T03:05:09.428Z">
+<meta property="article:author" content="Reverse">
+<meta property="article:tag" content="分享">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ghchart.rshah.org/409ba5/12thstan">
+
+
+<link rel="canonical" href="https://next.c12th.cn/archives/3.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://next.c12th.cn/archives/3.html","path":"archives/3.html","title":"把github贡献日历部署到博客上(二)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>把github贡献日历部署到博客上(二) | Reverse -s blog</title>
+  
+
+
+
+
+<link rel="dns-prefetch" href="https://waline-next.c12th.cn/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Reverse -s blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"JjYFPXwETnRfT4VW",ck:"JjYFPXwETnRfT4VW"})</script>
+  <script src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script>
+  <script>new LingQue.Monitor().init({id:"JjYG0Uge5XB0hC9u"});</script>
+
+  <a target="_blank" rel="noopener" href="https://github.com/12thstan/Next" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Reverse -s blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%99%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E9%83%A8%E7%BD%B2"><span class="nav-number">2.1.</span> <span class="nav-text">直接部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89-%E9%A2%9C%E8%89%B2"><span class="nav-number">2.2.</span> <span class="nav-text">自定义 颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0-Next-%E4%B8%BB%E9%A2%98"><span class="nav-number">2.3.</span> <span class="nav-text">部署到 Next 主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E5%88%86%E8%87%AA%E5%AE%9A%E4%B9%89"><span class="nav-number">2.4.</span> <span class="nav-text">部分自定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%9C%A8-%E6%AF%8F%E7%AF%87%E6%96%87%E7%AB%A0%E9%A1%B6%E9%83%A8-%E6%98%BE%E7%A4%BA"><span class="nav-number">2.4.1.</span> <span class="nav-text">不在 每篇文章顶部 显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8-%E5%85%B3%E4%BA%8E-%E6%98%BE%E7%A4%BA"><span class="nav-number">2.4.2.</span> <span class="nav-text">在 关于 显示</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-number">3.</span> <span class="nav-text">补充</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Reverse"
+      src="https://npm.elemecdn.com/reverse-stu-allversions@1.0.0/img/202203071633899.gif">
+  <p class="site-author-name" itemprop="name">Reverse</p>
+  <div class="site-description" itemprop="description">做自己喜欢做的事</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/12thstan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;12thstan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/c12th" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;c12th" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Gitee</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/ceverse" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;ceverse" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1308168694@qq.com" title="E-Mail → mailto:1308168694@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.c12th.cn/" title="https:&#x2F;&#x2F;blog.c12th.cn" rel="noopener" target="_blank">主站</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://qexo-ashen.vercel.app/" title="https:&#x2F;&#x2F;qexo-ashen.vercel.app" rel="noopener" target="_blank">后台</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://waline-next.c12th.cn/ui" title="https:&#x2F;&#x2F;waline-next.c12th.cn&#x2F;ui" rel="noopener" target="_blank">评论</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+<!-- Github Calendar -->
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://next.c12th.cn/archives/3.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://npm.elemecdn.com/reverse-stu-allversions@1.0.0/img/202203071633899.gif">
+      <meta itemprop="name" content="Reverse">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Reverse -s blog">
+      <meta itemprop="description" content="做自己喜欢做的事">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="把github贡献日历部署到博客上(二) | Reverse -s blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          把github贡献日历部署到博客上(二)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-29 18:53:00" itemprop="dateCreated datePublished" datetime="2022-05-29T18:53:00+00:00">2022-05-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-07 03:05:09" itemprop="dateModified" datetime="2022-07-07T03:05:09+00:00">2022-07-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%99%BD%E5%AB%96%E5%B0%8F%E6%8A%80%E5%B7%A7/" itemprop="url" rel="index"><span itemprop="name">白嫖小技巧</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/archives/3.html#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/archives/3.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p><font size=3>原教程已经说得很详细了，这里演示 <em><strong>简化版</strong></em></font></p>
+</blockquote>
+<blockquote>
+<p><font size=3>原教程源自 <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44580076/article/details/118737615">Gainii 大佬</a></font></p>
+</blockquote>
+<span id="more"></span>
+
+<hr>
+<img src="https://ghchart.rshah.org/409ba5/12thstan" alt="12thstan's Github Chart" />
+
+<p><strong><p align = "center">效果展示</p></strong></p>
+<hr>
+<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><h2 id="直接部署"><a href="#直接部署" class="headerlink" title="直接部署"></a>直接部署</h2><ul>
+<li>这里用到了 <a target="_blank" rel="noopener" href="https://github.com/2016rshah/githubchart-api">2016rshah 大佬</a> 的方法。</li>
+</ul>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://ghchart.rshah.org/github用户名&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;github用户名&#x27;s Github chart&quot;</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44580076/article/details/118737615">这个方法最绝的地方是，将你自己的贡献日历变成了图片，只需要使用一行 HTML 语句，就可以在任何地方使用贡献日历。</a></li>
+</ul>
+<br/>
+
+<ul>
+<li>如我在当前页面下部署</li>
+</ul>
+<img src="https://ghchart.rshah.org/12thstan" alt="12thstan's Github chart" />
+
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://ghchart.rshah.org/12thstan&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;12thstan&#x27;s Github chart&quot;</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="自定义-颜色"><a href="#自定义-颜色" class="headerlink" title="自定义 颜色"></a>自定义 颜色</h2><ul>
+<li>自定义 <strong>颜色</strong> <strong>#000000</strong> <em>十六进制颜色代码</em> <strong><font size="3" color="red">注意格式不带#</font></strong></li>
+</ul>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://ghchart.rshah.org/000000/github用户名&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;github用户名&#x27;s Github Chart&quot;</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<ul>
+<li><font size="3" color="blue">蓝色</font> <strong>#0000FF</strong></li>
+</ul>
+<img src="https://ghchart.rshah.org/0000FF/12thstan" alt="12thstan's Github Chart" />
+
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://ghchart.rshah.org/0000FF/12thstan&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;12thstan&#x27;s Github Chart&quot;</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><font size="3" color="red">红色</font> <strong>#ff0000</strong></li>
+</ul>
+<img src="https://ghchart.rshah.org/ff0000/12thstan" alt="12thstan's Github Chart" />
+
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://ghchart.rshah.org/ff0000/12thstan&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;12thstan&#x27;s Github Chart&quot;</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><font size="3" color="green">绿色</font> <strong>#00785D</strong></li>
+</ul>
+<img src="https://ghchart.rshah.org/00785D/12thstan" alt="12thstan's Github Chart" />
+
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://ghchart.rshah.org/00785D/12thstan&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;12thstan&#x27;s Github Chart&quot;</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="部署到-Next-主题"><a href="#部署到-Next-主题" class="headerlink" title="部署到 Next 主题"></a>部署到 Next 主题</h2><ul>
+<li><strong>几乎全局</strong> 部署</li>
+</ul>
+<ol>
+<li><p>修改 <strong>主题目录</strong> <code>[Blogroot]\themes\next\layout\ _layout.swig</code> <strong><font size="3" color="red">(其他版本可能叫 <code>_layout.njk</code> )</font></strong> ，<strong>在</strong> <code>&#123;% include '_partials/header/sub-menu.swig' %&#125;</code> <strong><font size="3" color="red">(其他版本可能叫 <code>sub-menu.njk</code> )</font></strong> <strong>下</strong> ， <font size="3" color="blue">添加以下内容</font> ， <strong><font size="3" color="red">注意格式</font></strong></p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">          &#123;% include &#x27;_partials/header/sub-menu.swig&#x27; %&#125;</span><br><span class="line"><span class="addition">+          &lt;!-- Github Calendar --&gt;</span></span><br><span class="line"><span class="addition">+          &#123;%- if page.type !== &#x27;categories&#x27; and page.type !== &#x27;tags&#x27; and page.type !== &#x27;schedule&#x27; and page.type !== &#x27;works&#x27; and page.type !== &#x27;about&#x27; and page.type !== &#x27;post&#x27;%&#125;</span></span><br><span class="line"><span class="addition">+            &lt;div class=&quot;post-block animated fadeIn&quot;&gt;</span></span><br><span class="line"><span class="addition">+              &lt;h5 class=&quot;post-title&quot; itemprop=&quot;name headline&quot;&gt;</span></span><br><span class="line"><span class="addition">+                &lt;!-- github用户名改自己的 --&gt;</span></span><br><span class="line"><span class="addition">+                &lt;a href=&quot;https://github.com/github用户名&quot; class=&quot;post-title-link&quot; itemprop=&quot;url&quot;&gt;Github Contribution Calendar&lt;/a&gt;</span></span><br><span class="line"><span class="addition">+              &lt;/h5&gt;</span></span><br><span class="line"><span class="addition">+              &lt;div class=&quot;post-body animated fadeInDown&quot; itemprop=&quot;articleBody&quot;&gt;</span></span><br><span class="line"><span class="addition">+                &lt;!-- 颜色默认蓝色 --&gt;</span></span><br><span class="line"><span class="addition">+                &lt;img style=&quot;width: 100%; margin-top: 30px;&quot; src=&quot;https://ghchart.rshah.org/409ba5/github用户名&quot; alt=&quot;github用户名&#x27;s Github Chart&quot; /&gt;</span></span><br><span class="line"><span class="addition">+              &lt;/div&gt;</span></span><br><span class="line"><span class="addition">+            &lt;/div&gt;</span></span><br><span class="line"><span class="addition">+          &#123;%- endif %&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 <font size="3" color="blue">github用户为自己的</font> ，颜色默认蓝色 <em>可自定义</em> ，修改完 <font size="3" color="red">如图 1 所示</font></p>
+<img src="https://pic.imgdb.cn/item/629321b30947543129224858.png"></li>
+</ol>
+<p align = "center">图 1</p>
+
+<ol start="3">
+<li><font size="3" color="blue">三连</font> ，即可<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h2 id="部分自定义"><a href="#部分自定义" class="headerlink" title="部分自定义"></a>部分自定义</h2><h3 id="不在-每篇文章顶部-显示"><a href="#不在-每篇文章顶部-显示" class="headerlink" title="不在 每篇文章顶部 显示"></a>不在 <em>每篇文章顶部</em> 显示</h3><ul>
+<li>需要在 <strong>每篇文章顶部都加上</strong> <code>type: "about"</code> 即可， <strong><font size="3" color="red">注意格式</font></strong><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">---</span></span><br><span class="line">title: test</span><br><span class="line">date: 2022-05-29 16:35:15</span><br><span class="line">tags:</span><br><span class="line"><span class="addition">+   type: &quot;post&quot;</span></span><br><span class="line"><span class="comment">---</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="在-关于-显示"><a href="#在-关于-显示" class="headerlink" title="在 关于 显示"></a>在 <em>关于</em> 显示</h3><ul>
+<li><p>修改 <strong>新增代码这行</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if page.type !== &#x27;categories&#x27; and page.type !== &#x27;tags&#x27; and page.type !== &#x27;schedule&#x27; and page.type !== &#x27;works&#x27; and page.type !== &#x27;about&#x27; and page.type !== &#x27;post&#x27;%&#125;</span><br></pre></td></tr></table></figure>
+<p>中，把 <code>page.type !== 'about' and</code> <font size="3" color="red">这句代码删掉</font> ，然后保存，<font size="3" color="blue">三连</font> 即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 删除前 --&gt;</span><br><span class="line">page.type !== &#x27;works&#x27; and page.type !== &#x27;about&#x27; and page.type !== &#x27;post&#x27;</span><br></pre></td></tr></table></figure>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">- page.type !== &#x27;about&#x27; and</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 删除后 --&gt;</span><br><span class="line">page.type !== &#x27;works&#x27; and page.type !== &#x27;post&#x27;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<br/>
+
+<ul>
+<li><font size="3" color="blue">同理</font> 在 <strong>标签</strong> 和 <strong>分类</strong> 都显示，把 <code>page.type !== 'categories' and page.type !== 'tags' and</code> <font size="3" color="red">这两句代码删除</font> 即可<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">- page.type !== &#x27;categories&#x27; and page.type !== &#x27;tags&#x27; and</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><blockquote>
+<p>如不能使用 <strong>HTML语句</strong> 可看另一种写法 <em><a target="_blank" rel="noopener" href="https://jsimple.c12th.cn/posts/3/">把github贡献日历部署到博客上(二)</a></em></p>
+</blockquote>
+<blockquote>
+<p>第一篇 <em><a target="_blank" rel="noopener" href="https://blog.c12th.cn/archives/5.html">把github贡献日历部署到博客上(一)</a></em></p>
+</blockquote>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>可以请我喝奶茶吗?</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="https://pic.imgdb.cn/item/624aa2db239250f7c51480f0.jpg" alt="Reverse 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="https://pic.imgdb.cn/item/624aa2db239250f7c51480ed.jpg" alt="Reverse 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Reverse
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://next.c12th.cn/archives/3.html" title="把github贡献日历部署到博客上(二)">https://next.c12th.cn/archives/3.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/CC%20BY-NC-SA%204.0/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%88%86%E4%BA%AB/" rel="tag"># 分享</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/archives/2.html" rel="prev" title="白嫖cloudflare实现网址短链接">
+                  <i class="fa fa-chevron-left"></i> 白嫖cloudflare实现网址短链接
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/archives/4.html" rel="next" title="Python日记 -- 百度OCR翻译">
+                  Python日记 -- 百度OCR翻译 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Reverse</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("7/30/2021 09:33:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已运行 "+'<font style=color:#afb4db>'+dnum+'</font>'+" 天 ";
+        document.getElementById("times").innerHTML = '<font style=color:#f391a9>'+hnum+'</font>' + " 小时 " + '<font style=color:#fdb933>'+mnum+'</font>' + " 分 " + '<font style=color:#a3cf62>'+snum+'</font>' + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+      <!-- 页面点击小红心 -->
+      <script type="text/javascript" src="https://unpkg.com/reverse-stu-allversions@1.0.1/Next/love.js"></script>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-next.c12th.cn/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"请文明评论呀","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/archives/3.html"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+</body>
+</html>
